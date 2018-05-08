@@ -104,9 +104,11 @@ Using these variables CMake can be used to generate your Ninja or Make files. Us
 An example build session targeting the build platform could look like this:
 
 ```
-mkdir /tmp/build.paho
-cd /tmp/build.paho
+mkdir build
+cd build
 cmake -GNinja -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_DOCUMENTATION=TRUE -DPAHO_BUILD_SAMPLES=TRUE ~/git/org.eclipse.paho.mqtt.c
+or
+cmake (-DOPENSSL_ROOT_DIR=/usr/local/ssl -DOPENSSL_LIBRARIES=/usr/local/ssl/lib) ..
 ```
 
 Invoking cmake and specifying build options can also be performed using cmake-gui or ccmake (see https://cmake.org/runningcmake/). For example:
